@@ -16,7 +16,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   bkash: ^0.0.2
   get: ^4.6.6
-
+  uddoktapay: ^0.0.4
 
 
 dev_dependencies:

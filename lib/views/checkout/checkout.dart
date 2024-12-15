@@ -15,8 +15,11 @@ class _CheckoutState extends State<Checkout> {
   List<Map> gateways = [
     {
       'name': 'bKash',
-      'logo':
-      'https://freelogopng.com/images/all_img/1656234841bkash-icon-png.png',
+      'logo': 'https://freelogopng.com/images/all_img/1656234841bkash-icon-png.png',
+    },
+    {
+      'name': 'UddoktaPay',
+      'logo': 'https://uddoktapay.com/assets/images/xlogo-icon.png.pagespeed.ic.IbVircDZ7p.png',
     },
   ];
 
@@ -58,10 +61,7 @@ class _CheckoutState extends State<Checkout> {
                         name: gateways[index]['name'],
                         selected: selected ?? '',
                         onTap: () {
-                          selected = gateways[index]['name']
-                              .toString()
-                              .replaceAll(' ', '_')
-                              .toLowerCase();
+                          selected = gateways[index]['name'].toString().replaceAll(' ', '_');
                           setState(() {});
                         },
                       );
@@ -75,7 +75,10 @@ class _CheckoutState extends State<Checkout> {
               ),
             ),
             InkWell(
-              onTap: selected == null ? null : () => onButtonTap(selected ?? '', context),
+              onTap: selected == null ? null : () {
+                // print('Selected : $selected');
+                onButtonTap(selected ?? '', context);
+              },
               child: Container(
                 height: 50,
                 width: double.infinity,
